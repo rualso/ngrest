@@ -12,7 +12,7 @@ file(COPY ${NGRESTUTILS_HEADERS} DESTINATION ${PROJECT_INCLUDE_DIR}/ngrest/utils
 
 add_definitions(-DNGREST_UTILS_DLL_EXPORTS)
 
-add_library(ngrestutils SHARED ${NGRESTUTILS_SOURCES})
+add_library(ngrestutils ${NGRESTUTILS_SOURCES})
 
 if (HAS_DL)
     target_link_libraries(ngrestutils dl)

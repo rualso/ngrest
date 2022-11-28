@@ -10,6 +10,6 @@ FILE(GLOB NGRESTJSON_HEADERS ${PROJECT_SOURCE_DIR}/*.h)
 
 file(COPY ${NGRESTJSON_HEADERS} DESTINATION ${PROJECT_INCLUDE_DIR}/ngrest/json/)
 
-add_library(ngrestjson SHARED ${NGRESTJSON_SOURCES})
+add_library(ngrestjson ${NGRESTJSON_SOURCES})
 
 target_link_libraries(ngrestjson ngrestutils ngrestcommon)

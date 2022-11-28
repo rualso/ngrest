@@ -12,6 +12,6 @@ file(COPY ${NGRESTCGPARSER_HEADERS} DESTINATION ${PROJECT_INCLUDE_DIR}/ngrest/co
 
 add_definitions(-DNGREST_CODEGENPARSER_DLL_EXPORTS)
 
-add_library(ngrestcgparser SHARED ${NGRESTCGPARSER_SOURCES})
+add_library(ngrestcgparser ${NGRESTCGPARSER_SOURCES})
 
 target_link_libraries(ngrestcgparser ngrestutils)

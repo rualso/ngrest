@@ -7,6 +7,8 @@ include(CheckCXXCompilerFlag)
 include(CheckLibraryExists)
 include(CheckIncludeFileCXX)
 
+option(BUILD_SHARED_LIBS "Build libraries as shared ones" ON)
+
 check_cxx_compiler_flag(-std=gnu++11 HAS_CXX11)
 if (HAS_CXX11)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
@@ -58,6 +60,11 @@ if (CMAKE_BUILD_TYPE MATCHES "DEBUG")
     # link pthread in debug/single thread version
     # to detect incorrect posting to event loop from non-main thread
     set(LINK_PTHREAD "${HAS_PTHREAD}")
+endif()
+
+if(BUILD_SHARED_LIBS)
+else (BUILD_SHARED_LIBS)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 endif()
 
 set(PROJECT_DEPLOY_DIR ${PROJECT_BINARY_DIR}/deploy)

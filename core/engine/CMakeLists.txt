@@ -12,6 +12,6 @@ file(COPY ${NGRESTENGINE_HEADERS} DESTINATION ${PROJECT_INCLUDE_DIR}/ngrest/engi
 
 add_definitions(-DNGREST_ENGINE_DLL_EXPORTS)
 
-add_library(ngrestengine SHARED ${NGRESTENGINE_SOURCES})
+add_library(ngrestengine ${NGRESTENGINE_SOURCES})
 
 target_link_libraries(ngrestengine ngrestutils ngrestcommon ngrestjson)

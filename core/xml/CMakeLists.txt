@@ -12,7 +12,7 @@ file(COPY ${NGRESTXML_HEADERS} DESTINATION ${PROJECT_INCLUDE_DIR}/ngrest/xml/)
 
 add_definitions(-DNGREST_XML_DLL_EXPORTS)
 
-add_library(ngrestxml SHARED ${NGRESTXML_SOURCES})
+add_library(ngrestxml ${NGRESTXML_SOURCES})
 
 target_link_libraries(ngrestxml ngrestutils)
 if (HAS_DL)
